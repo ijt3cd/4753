@@ -182,6 +182,13 @@
 				width: 100%;
 			}
 
+
+		.logo-image
+		{
+			position: relative;
+			top: 35px;
+		}
+
 		.bordered-feature-image
 		{
 			display: block;
@@ -202,7 +209,7 @@
 		{
 			display: inline-block;
 			background: #ed391b;
-			color: #fff;
+			color: #000;
 			text-decoration: none;
 			font-size: 1.75em;
 			font-weight: 300;
@@ -395,7 +402,7 @@
 				
 				#content a
 				{
-					color: #ED391B;
+					/*color: #ED391B;*/
 				}
 				
 				#content header
