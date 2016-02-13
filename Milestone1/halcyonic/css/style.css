@@ -27,6 +27,11 @@
 			font-weight: 300;
 		}
 
+		em
+		{
+			font-style: italic;
+		}
+
 		ul, ol, p, dl
 		{
 			margin: 0 0 2em 0;
