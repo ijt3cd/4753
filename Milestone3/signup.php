@@ -65,6 +65,9 @@
 							if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 								$nameErr = "Only letters and white space allowed.";
 							}
+							if (trim($name) == '') {
+								$nameErr = "Missing.";
+							}
 
 							// Email check
 							if (empty($_POST["email"])) {
@@ -84,6 +87,9 @@
 							else {
 								$address = test_input($_POST["address"]);
 							}
+							if (trim($address) == '') {
+								$addressErr = "Missing.";
+							}
 
 							// City check
 							if (empty($_POST["city"])) {
@@ -95,6 +101,9 @@
 							if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
 								$cityErr = "Only letters and white space allowed.";
 							}
+							if (trim($city) == '') {
+								$cityErr = "Missing.";
+							}
 
 							// State check
 							if (empty($_POST["state"])) {
@@ -105,6 +114,9 @@
 							}
 							if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
 								$stateErr = "Enter Valid State";
+							}
+							if (trim($state) == '') {
+								$cityErr = "Missing.";
 							}
 
 							// Zipcode check
