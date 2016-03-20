@@ -14,9 +14,37 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
 	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		// This identifies your website in the createToken call below
 		Stripe.setPublishableKey('pk_test_NXTpBhEVwIsYpPYS8ltRRV4D');
+
+		var stripeResponseHandler = function(status, response) {
+			var $form = $('#payment-form');
+			if (response.error) {
+				// Show the errors on the form
+				$form.find('.payment-errors').text(response.error.message);
+				$form.find('button').prop('disabled', false);
+			} else {
+				// token contains id, last4, and card type
+				var token = response.id;
+				// Insert the token into the form so it gets submitted to the server
+				$form.append($('<input type="hidden" name="stripeToken" />').val(token));
+				// and re-submit
+				$form.get(0).submit();
+			}
+		};
+
+		jQuery(function($) {
+			$('#payment-form').submit(function(e) {
+				var $form = $(this);
+				// Disable the submit button to prevent repeated clicks
+				$form.find('button').prop('disabled', true);
+				Stripe.card.createToken($form, stripeResponseHandler);
+				// Prevent the form from submitting with the default action
+				return false;
+			});
+		});
 		</script>
 	</head>
 	<body class="subpage">
@@ -253,7 +281,7 @@
 
 						<!--Personal info-->
 
-						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="payment-form">
 							<table>
 								<tr>
 									<td style='font-size:120%;'><u>Personal Information</u></td>
@@ -322,47 +350,47 @@
 								<tr>
 									<td colspan='2'><br/>Currently, our service is subscription based at a rate of 
 										<strong>$10/month</strong>.</td>
-								</tr>
+									</tr>
 
-								<!--?INPUT VALIDATION?-->
-								<tr>
-									<td><br/>Credit Card Number:</td>
-									<td><br/><input type="text" size="20" data-stripe="number"/></td>
-								</tr>
+									<!--?INPUT VALIDATION?-->
+									<tr>
+										<td><br/>Credit Card Number:</td>
+										<td><br/><input type="text" size="20" data-stripe="number"/></td>
+									</tr>
 
-								<tr>
-									<td>CVV:</td>
-									<td><input type="text" size="4" data-stripe="cvc"/></td>
-								</tr>
+									<tr>
+										<td>CVV:</td>
+										<td><input type="text" size="4" data-stripe="cvc" maxlength="4"/></td>
+									</tr>
 
-								<tr>
-									<td>Expiration Date (MM/YYYY):</td>
-									<td><input type="text" size="2" data-stripe="exp-month"/> / 
-										<input type="text" size="4" data-stripe="exp-year"/></td>
-								</tr>
+									<tr>
+										<td>Expiration Date (MM/YYYY):</td>
+										<td><input type="text" size="2" data-stripe="exp-month" maxlength="2"/> / 
+											<input type="text" size="4" data-stripe="exp-year" maxlength="4"/></td>
+										</tr>
 
-								<td>
-									<br/><input type = "submit" name = "submit" value = "Submit">
-								</td>
+									</table>
 
-							</table>
+									<br/>
+									<button type="submit" name="submit" style="color:#474f51;font-size:13.5pt;
+									font-family:'Yanone Kaffeesatz';line-height:1.85em;font-weight:300;">Submit</button>
 
-						</form>
+								</form>
 
-					</section>
+							</section>
 
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
 
-	<!-- Copyright -->
-	<div id="copyright">
-		<br/>
-		Created by Isaac Tessler, Harriet Cao, Grant Zou. Design by nodethirtythree + FCT.
-		<br/>
-	</div>
+			<!-- Copyright -->
+			<div id="copyright">
+				<br/>
+				Created by Isaac Tessler, Harriet Cao, Grant Zou. Design by nodethirtythree + FCT.
+				<br/>
+			</div>
 
-</body>
-</html>
+		</body>
+		</html>
