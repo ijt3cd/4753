@@ -252,13 +252,16 @@
 						<p><span class = "error">All fields required.</span></p>
 
 						<!--Personal info-->
-						<p style='font-size:120%;'><u>Personal Information</u></p>
 
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 							<table>
 								<tr>
-									<td>Name:</td>
-									<td><input type = "text" name = "name" value="<?php echo htmlspecialchars($name);?>">
+									<td style='font-size:120%;'><u>Personal Information</u></td>
+								</tr>
+
+								<tr>
+									<td><br/>Name:</td>
+									<td><br/><input type = "text" name = "name" value="<?php echo htmlspecialchars($name);?>">
 										<span class = "error"><?php echo $nameErr;?></span>
 									</td>
 								</tr>
@@ -317,7 +320,7 @@
 								</tr>
 
 								<tr>
-									<td colspan='2'>Currently, our service is subscription based at a rate of 
+									<td colspan='2'><br/>Currently, our service is subscription based at a rate of 
 										<strong>$10/month</strong>.</td>
 								</tr>
 
