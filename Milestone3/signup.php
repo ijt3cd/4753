@@ -109,7 +109,7 @@
 								else {
 									$email = test_input($_POST["email"]);
 								}
-								if (!preg_match("/^[a-zA-Z0-9_\+]*@[a-zA-Z0-9]+\.[a-zA-z]+$/", $email)){
+								if (!preg_match("/^[a-zA-Z0-9_\+]+@[a-zA-Z0-9]+\.[a-zA-z]+$/", $email)){
 									$emailErr = "Enter a valid email address";
 								}
 
@@ -197,8 +197,21 @@
 										echo "Error: " . $sql . "<br>" . $conn->error;
 									}
 
-									$conn->close();
+									// Set your secret key
+									require_once('./config.php');
+									\Stripe\Stripe::setApiKey("sk_test_yWy4crhsaZEfm2ZLzQtGkdRq");
 
+									// Get the credit card details submitted by the form
+									$token = $_POST['stripeToken'];
+
+									// Create a Customer & subscribe them
+									$customer = \Stripe\Customer::create(array(
+									  "source" => $token,
+									  "plan" => "sub",
+									  "description" => $name)
+									);
+
+									$conn->close();
 
 
 								//email stuff
@@ -374,7 +387,7 @@
 									</table>
 
 									<br/>
-									<button type="submit" name="submit" style="color:#474f51;font-size:13.5pt;
+									<button type="submit" name="btnsubmit" style="color:#474f51;font-size:13.5pt;
 									font-family:'Yanone Kaffeesatz';line-height:1.85em;font-weight:300;">Submit</button>
 
 								</form>
