@@ -352,6 +352,8 @@
 										<strong>$10/month</strong>.</td>
 									</tr>
 
+									<tr><td colspan='2'><span class="payment-errors"/></td></tr>
+
 									<!--?INPUT VALIDATION?-->
 									<tr>
 										<td><br/>Credit Card Number:</td>

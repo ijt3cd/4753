@@ -37,7 +37,7 @@
 			font-weight: bold;
 		}
 
-		.error 
+		.error, .payment-errors
 		{
 			color: #FF0000;
 		}
