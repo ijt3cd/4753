@@ -32,6 +32,11 @@
 			font-style: italic;
 		}
 
+		strong
+		{
+			font-weight: bold;
+		}
+
 		.error 
 		{
 			color: #FF0000;

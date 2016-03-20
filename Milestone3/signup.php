@@ -13,159 +13,164 @@
 	<!--5grid--><script src="css/5grid/viewport.js"></script><!--[if lt IE 9]><script src="css/5grid/ie.js"></script><![endif]--><link rel="stylesheet" href="css/5grid/responsive.css" /><!--/5grid-->
 	<link rel="stylesheet" href="css/style.css" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
-</head>
-<body class="subpage">
-	
-	<!-- Header -->
-	<div id="header-wrapper">
-		<header id="header" class="5grid">
-			<div class="12u-first">
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script type="text/javascript">
+		// This identifies your website in the createToken call below
+		Stripe.setPublishableKey('pk_test_NXTpBhEVwIsYpPYS8ltRRV4D');
+		</script>
+	</head>
+	<body class="subpage">
 
-				<!-- Logo -->
-				<h1><a href="index.html" class ="logo-image"><img src="images/logo.png" alt="" /></a></h1>
-
-				<!-- Nav -->
-				<nav>
-					<a href="index.html">Homepage</a>
-					<a href="signup.php">Sign Up/Login</a>
-					<a href="about.html">About Us</a>
-				</nav>
-
-			</div>
-		</header>
-	</div>
-
-	<!-- Content -->
-	<div id="content-wrapper">
-		<div id="content">
-			<div class="5grid">
+		<!-- Header -->
+		<div id="header-wrapper">
+			<header id="header" class="5grid">
 				<div class="12u-first">
 
-					<!-- Main Content -->
-					<section>
-						<header>
-							<h2>Register below!</h2>
-						</header>
+					<!-- Logo -->
+					<h1><a href="index.html" class ="logo-image"><img src="images/logo.png" alt="" /></a></h1>
 
-						<?php
+					<!-- Nav -->
+					<nav>
+						<a href="index.html">Homepage</a>
+						<a href="signup.php">Sign Up/Login</a>
+						<a href="about.html">About Us</a>
+					</nav>
+
+				</div>
+			</header>
+		</div>
+
+		<!-- Content -->
+		<div id="content-wrapper">
+			<div id="content">
+				<div class="5grid">
+					<div class="12u-first">
+
+						<!-- Main Content -->
+						<section>
+							<header>
+								<h2>Register below!</h2>
+							</header>
+
+							<?php
 
          				// define variables and set to empty values
-						$nameErr = $emailErr = $addressErr = $cityErr = $stateErr = $zipErr = "";
-						$name = $email = $address = $city = $state = $zip = $baseball = $basketball = $football = 
-						$volleyball = "";
+							$nameErr = $emailErr = $addressErr = $cityErr = $stateErr = $zipErr = "";
+							$name = $email = $address = $city = $state = $zip = $baseball = $basketball = $football = 
+							$volleyball = "";
 
-						if ($_SERVER["REQUEST_METHOD"] == "POST") {
+							if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							// Name check
-							if (empty($_POST["name"])) {
-								$nameErr = "Missing.";
-							}
-							else {
-								$name = test_input($_POST["name"]);
-							}
-							if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-								$nameErr = "Only letters and white space allowed.";
-							}
-							if (trim($name) == '') {
-								$nameErr = "Missing.";
-							}
+								if (empty($_POST["name"])) {
+									$nameErr = "Missing.";
+								}
+								else {
+									$name = test_input($_POST["name"]);
+								}
+								if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+									$nameErr = "Only letters and white space allowed.";
+								}
+								if (trim($name) == '') {
+									$nameErr = "Missing.";
+								}
 
 							// Email check
-							if (empty($_POST["email"])) {
-								$emailErr = "Missing.";
-							}
-							else {
-								$email = test_input($_POST["email"]);
-							}
-							if (!preg_match("/^[a-zA-Z0-9_\+]*@[a-zA-Z0-9]+\.[a-zA-z]+$/", $email)){
-								$emailErr = "Enter a valid email address";
-							}
+								if (empty($_POST["email"])) {
+									$emailErr = "Missing.";
+								}
+								else {
+									$email = test_input($_POST["email"]);
+								}
+								if (!preg_match("/^[a-zA-Z0-9_\+]*@[a-zA-Z0-9]+\.[a-zA-z]+$/", $email)){
+									$emailErr = "Enter a valid email address";
+								}
 
 							// Address check
-							if (empty($_POST["address"])) {
-								$addressErr = "Missing.";
-							}
-							else {
-								$address = test_input($_POST["address"]);
-							}
-							if (trim($address) == '') {
-								$addressErr = "Missing.";
-							}
+								if (empty($_POST["address"])) {
+									$addressErr = "Missing.";
+								}
+								else {
+									$address = test_input($_POST["address"]);
+								}
+								if (trim($address) == '') {
+									$addressErr = "Missing.";
+								}
 
 							// City check
-							if (empty($_POST["city"])) {
-								$cityErr = "Missing.";
-							}
-							else {
-								$city = test_input($_POST["city"]);
-							}
-							if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
-								$cityErr = "Only letters and white space allowed.";
-							}
-							if (trim($city) == '') {
-								$cityErr = "Missing.";
-							}
+								if (empty($_POST["city"])) {
+									$cityErr = "Missing.";
+								}
+								else {
+									$city = test_input($_POST["city"]);
+								}
+								if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
+									$cityErr = "Only letters and white space allowed.";
+								}
+								if (trim($city) == '') {
+									$cityErr = "Missing.";
+								}
 
 							// State check
-							if (empty($_POST["state"])) {
-								$stateErr = "Missing.";
-							}
-							else {
-								$state = test_input($_POST["state"]);
-							}
-							if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
-								$stateErr = "Enter Valid State";
-							}
-							if (trim($state) == '') {
-								$stateErr = "Missing.";
-							}
+								if (empty($_POST["state"])) {
+									$stateErr = "Missing.";
+								}
+								else {
+									$state = test_input($_POST["state"]);
+								}
+								if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
+									$stateErr = "Enter Valid State";
+								}
+								if (trim($state) == '') {
+									$stateErr = "Missing.";
+								}
 
 							// Zipcode check
-							if (empty($_POST["zip"])) {
-								$zipErr = "Missing.";
-							}
-							else {
-								$zip = test_input($_POST["zip"]);
-							}
-							if (!preg_match ('/^[0-9]{5}$/', $zip)){
-								if (!preg_match ( '/^([0-9]{5})-([0-9]{4})$/', $zip) ) {
-									$zipErr = "Enter Valid Zip";
+								if (empty($_POST["zip"])) {
+									$zipErr = "Missing.";
 								}
-							}
+								else {
+									$zip = test_input($_POST["zip"]);
+								}
+								if (!preg_match ('/^[0-9]{5}$/', $zip)){
+									if (!preg_match ( '/^([0-9]{5})-([0-9]{4})$/', $zip) ) {
+										$zipErr = "Enter Valid Zip";
+									}
+								}
 
-							if(($nameErr == "") && ($emailErr == "") && ($addressErr == "") && ($cityErr == "") && ($stateErr == "") && ($zipErr == "")){
-								$servername = "localhost";
-								$username = "root";
-								$password = "";
-								$dbname = "datanamics";
+								if(($nameErr == "") && ($emailErr == "") && ($addressErr == "") && ($cityErr == "") && ($stateErr == "") && ($zipErr == "")){
+									$servername = "localhost";
+									$username = "root";
+									$password = "";
+									$dbname = "datanamics";
 
 							// Create connection
-								$conn = new mysqli($servername, $username, $password, $dbname);
+									$conn = new mysqli($servername, $username, $password, $dbname);
 							// Check connection
-								if ($conn->connect_error) {
-									die("Connection failed: " . $conn->connect_error);
-								} 
+									if ($conn->connect_error) {
+										die("Connection failed: " . $conn->connect_error);
+									} 
 
-								$name = $_POST['name'];
-								$email = $_POST['email'];
-								$address = $_POST['address'];
-								$city = $_POST['city'];
-								$state = $_POST['state'];
-								$zip = $_POST['zip'];
-								$baseball = $_POST['baseball'];
-								$basketball = $_POST['basketball'];
-								$football = $_POST['football'];
-								$volleyball = $_POST['volleyball'];
+									$name = $_POST['name'];
+									$email = $_POST['email'];
+									$address = $_POST['address'];
+									$city = $_POST['city'];
+									$state = $_POST['state'];
+									$zip = $_POST['zip'];
+									$baseball = $_POST['baseball'];
+									$basketball = $_POST['basketball'];
+									$football = $_POST['football'];
+									$volleyball = $_POST['volleyball'];
 
-								$sql = "INSERT INTO userData (name, email, address, city, state, zip, baseball, basketball, football, volleyball) VALUES ('$name', '$email', '$address', '$city', '$state', '$zip', '$baseball', '$basketball', '$football', '$volleyball')";
+									$sql = "INSERT INTO userData (name, email, address, city, state, zip, baseball, basketball, football, volleyball) VALUES ('$name', '$email', '$address', '$city', '$state', '$zip', '$baseball', '$basketball', '$football', '$volleyball')";
 
-								if ($conn->query($sql) === TRUE) {
-									echo "<div style ='font:21px;font-size:200%;font-weight: 900;color:#38B400;text-align:center'> Signup successful.</div>";
-								} else {
-									echo "Error: " . $sql . "<br>" . $conn->error;
-								}
+									if ($conn->query($sql) === TRUE) {
+										echo "<div style ='font:21px;font-size:200%;font-weight: 900;color:#38B400;text-align:center'> Signup successful.</div>";
+									} else {
+										echo "Error: " . $sql . "<br>" . $conn->error;
+									}
 
-								$conn->close();
-								
+									$conn->close();
+
 
 
 								//email stuff
@@ -217,10 +222,10 @@
 //Replace the plain text body with one created manually
 								$body = "Thank you $name"."!"."
 
-Your payment has been received and your subscription will begin immediately.
-We hope that the datanamics system helps to bring your team to the next level.
-Good Luck!
--The Datanamics Team";
+								Your payment has been received, and your subscription will begin immediately.
+								We hope that the Datanamics system will help bring your team to the next level.
+								Good Luck!
+								-The Datanamics Team";
 								$mail->Body = $body;
 //Attach an image file
 								//$mail->addAttachment('images/phpmailer_mini.png');
@@ -245,6 +250,9 @@ Good Luck!
 						?>
 
 						<p><span class = "error">All fields required.</span></p>
+
+						<!--Personal info-->
+						<p style='font-size:120%;'><u>Personal Information</u></p>
 
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 							<table>
@@ -303,6 +311,33 @@ Good Luck!
 									</td>
 								</tr>
 
+								<!--Credit card info-->
+								<tr>
+									<td style='font-size:120%;'><u><br/>Banking Information</u></td>
+								</tr>
+
+								<tr>
+									<td colspan='2'>Currently, our service is subscription based at a rate of 
+										<strong>$10/month</strong>.</td>
+								</tr>
+
+								<!--?INPUT VALIDATION?-->
+								<tr>
+									<td><br/>Credit Card Number:</td>
+									<td><br/><input type="text" size="20" data-stripe="number"/></td>
+								</tr>
+
+								<tr>
+									<td>CVV:</td>
+									<td><input type="text" size="4" data-stripe="cvc"/></td>
+								</tr>
+
+								<tr>
+									<td>Expiration Date (MM/YYYY):</td>
+									<td><input type="text" size="2" data-stripe="exp-month"/> / 
+										<input type="text" size="4" data-stripe="exp-year"/></td>
+								</tr>
+
 								<td>
 									<br/><input type = "submit" name = "submit" value = "Submit">
 								</td>
@@ -310,6 +345,7 @@ Good Luck!
 							</table>
 
 						</form>
+
 					</section>
 
 				</div>
