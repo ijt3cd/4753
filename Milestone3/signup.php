@@ -27,7 +27,7 @@
 				<!-- Nav -->
 				<nav>
 					<a href="index.html">Homepage</a>
-					<a href="signup.html">Sign Up/Login</a>
+					<a href="signup.php">Sign Up/Login</a>
 					<a href="about.html">About Us</a>
 				</nav>
 
@@ -116,7 +116,7 @@
 								$stateErr = "Enter Valid State";
 							}
 							if (trim($state) == '') {
-								$cityErr = "Missing.";
+								$stateErr = "Missing.";
 							}
 
 							// Zipcode check
