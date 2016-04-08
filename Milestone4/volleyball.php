@@ -75,9 +75,9 @@ if(!isset($_SESSION["user"])){
                         <h2>Two Column #2</h2>
                         <h3>Another generic two column layout</h3>
                     </header>
-                    <p style="text-align:center;"><img src="images\Volleyballg1.png"></p>
+                    <p style="text-align:center;"><img src="images/Volleyballg1.png"></p>
                     <br\>
-                    <p style="text-align:center;"><img src="images\Volleyballg2.png"></p>
+                    <p style="text-align:center;"><img src="images/Volleyballg2.png"></p>
                 </section>
 
             </div>
