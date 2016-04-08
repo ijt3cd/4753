@@ -30,7 +30,8 @@ session_start();
 						<!-- Nav -->
 							<nav>
 								<a href="index.php">Homepage</a>
-								<a href="signup.php">Sign Up/Login</a>
+								<a href="signup.php">Sign Up</a>
+								<a href="login.php">Log In</a>
 								<a href="about.php">About Us</a>
 							</nav>
 

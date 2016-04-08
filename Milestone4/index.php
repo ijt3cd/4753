@@ -34,7 +34,8 @@ session_start();
 								<a href="twocolumn1.html">Two Column #1</a>
 								<a href="twocolumn2.html">Two Column #2</a>
 								<a href="onecolumn.html">One Column</a>-->
-								<a href="signup.php">Sign Up/Login</a>
+								<a href="signup.php">Sign Up</a>
+								<a href="login.php">Log In</a>
 								<a href="about.php">About Us</a>
 							</nav>
 
