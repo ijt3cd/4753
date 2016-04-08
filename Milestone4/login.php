@@ -30,10 +30,6 @@ session_start();
 						<!-- Nav -->
 							<nav>
 								<a href="index.php">Homepage</a>
-								<!--<a href="threecolumn.html">Three Column</a>
-								<a href="twocolumn1.html">Two Column #1</a>
-								<a href="twocolumn2.html">Two Column #2</a>
-								<a href="onecolumn.html">One Column</a>-->
 								<a href="signup.php">Sign Up</a>
 								<a href="login.php">Log In</a>
 								<a href="about.php">About Us</a>
@@ -144,24 +140,22 @@ session_start();
 
          				
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="payment-form">
+							<p>Please enter your email and password to continue.</p>
 							<table>
-								<tr>
-									<td style='font-size:120%;'><u>Enter your email and password to continue</u></td>
-								</tr>
 								<tr>
 									<td style='font-size:120%;'><u><br></u></td>
 								</tr>
 
 								<tr>
 									<td>E-mail: </td>
-									<td><input type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
+									<td><input style="width: 200px" type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
 										<span class = "error"><?php echo $emailErr;?></span> 
 									</td>
 								</tr>
 
 								<tr>
 									<td>Password: </td>
-									<td><input type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
+									<td><input style="width: 200px" type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
 										<span class = "error"><?php echo $passwordErr;?></span> 
 									</td>
 								</tr>
@@ -169,6 +163,7 @@ session_start();
 
 
 								</table>
+								<br/>
 								<button type="submit" name="btnsubmit" style="color:#474f51;font-size:13.5pt;
 									font-family:'Yanone Kaffeesatz';line-height:1.85em;font-weight:300;">Log In</button>
 							</section>
