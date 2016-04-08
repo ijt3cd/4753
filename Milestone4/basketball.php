@@ -71,10 +71,10 @@ if(!isset($_SESSION["user"])){
 
                 <!-- Main Content -->
                 <section style="text-align:center;">
-                    <header>
-                        <h2>Princess Anne Cavaliers Boys Volleyball</h2>
+                    <header >
+                        <h2>Princess Anne Lady Cavaliers</h2>
                     </header>
-                    <p><img src="images\Volleyballg1.png"></p>
+                    <p ><img src="images\bballg.png"></p>
                 </section>
 
             </div>
