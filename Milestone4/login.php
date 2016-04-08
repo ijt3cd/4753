@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION["user"])){
+header("Location: home.php");
+exit();
+}
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -140,12 +144,9 @@ session_start();
 
          				
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="payment-form">
-							<p>Please enter your email and password to continue.</p>
+							<p>Please enter your e-mail and password to continue.</p>
+							<br/>
 							<table>
-								<tr>
-									<td style='font-size:120%;'><u><br></u></td>
-								</tr>
-
 								<tr>
 									<td>E-mail: </td>
 									<td><input style="width: 200px" type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
@@ -159,8 +160,6 @@ session_start();
 										<span class = "error"><?php echo $passwordErr;?></span> 
 									</td>
 								</tr>
-
-
 
 								</table>
 								<br/>
