@@ -49,7 +49,7 @@ exit();
 		<div id="content-wrapper">
 			<div id="content">
 				<div class="5grid">
-					<div class="12u-first">
+					<div class="12u">
 
 						<!-- Main Content -->
 						<section>
@@ -145,7 +145,6 @@ exit();
          				
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="payment-form">
 							<p>Please enter your e-mail and password to continue.</p>
-							<br/>
 							<table>
 								<tr>
 									<td>E-mail: </td>
@@ -163,8 +162,9 @@ exit();
 
 								</table>
 								<br/>
-								<button type="submit" name="btnsubmit" style="color:#474f51;font-size:13.5pt;
-									font-family:'Yanone Kaffeesatz';line-height:1.85em;font-weight:300;">Log In</button>
+									<button type="submit" name="btnsubmit" class="button-smol">Log In</button>
+
+									<p><br/>Don't have an account with us yet? Register <a href="signup.php">here</a>.</p>
 							</section>
 
 						</div>

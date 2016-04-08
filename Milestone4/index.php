@@ -29,7 +29,7 @@ exit();
 					<div class="12u-first">
 					
 						<!-- Logo -->
-							<h1><a href="index.php" class ="logo-image"><img src="images/logo.png" alt="" /></a></h1>
+							<h1><a href="index.php" class ="logo-image"><img src="images/logo.png" alt=""/></a></h1>
 						
 						<!-- Nav -->
 							<nav>
