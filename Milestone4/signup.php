@@ -83,9 +83,8 @@
 							<?php
 
          				// define variables and set to empty values
-							$nameErr = $emailErr = $addressErr = $cityErr = $stateErr = $zipErr = "";
-							$name = $email = $address = $city = $state = $zip = $baseball = $basketball = $football = 
-							$volleyball = "";
+							$nameErr = $emailErr = $passwordErr = $addressErr = $cityErr = $stateErr = $zipErr = "";
+							$name = $email = $password = $address = $city = $state = $zip = $baseball = $basketball = $football = $volleyball = "";
 
 							if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							// Name check
@@ -112,6 +111,18 @@
 								if (!preg_match("/^[a-zA-Z0-9_\+]+@[a-zA-Z0-9]+\.[a-zA-z]+$/", $email)){
 									$emailErr = "Enter a valid email address";
 								}
+
+							//Password check
+								if (empty($_POST["password"])) {
+									$passwordErr = "Missing";
+								}
+								else {
+									$password = test_input($_POST["password"]);
+								}
+								if (strlen($password)<4){
+									$passwordErr = "Password must be at least 4 characters";
+								}
+								
 
 							// Address check
 								if (empty($_POST["address"])) {
@@ -165,14 +176,14 @@
 									}
 								}
 
-								if(($nameErr == "") && ($emailErr == "") && ($addressErr == "") && ($cityErr == "") && ($stateErr == "") && ($zipErr == "")){
+								if(($nameErr == "") && ($emailErr == "") && ($passwordErr == "") && ($addressErr == "") && ($cityErr == "") && ($stateErr == "") && ($zipErr == "")){
 									$servername = "localhost";
 									$username = "root";
-									$password = "";
+									$dbpassword = "";
 									$dbname = "datanamics";
 
 							// Create connection
-									$conn = new mysqli($servername, $username, $password, $dbname);
+									$conn = new mysqli($servername, $username, $dbpassword, $dbname);
 							// Check connection
 									if ($conn->connect_error) {
 										die("Connection failed: " . $conn->connect_error);
@@ -180,6 +191,7 @@
 
 									$name = $_POST['name'];
 									$email = $_POST['email'];
+									$password = $_POST['password'];
 									$address = $_POST['address'];
 									$city = $_POST['city'];
 									$state = $_POST['state'];
@@ -189,7 +201,7 @@
 									$football = $_POST['football'];
 									$volleyball = $_POST['volleyball'];
 
-									$sql = "INSERT INTO userData (name, email, address, city, state, zip, baseball, basketball, football, volleyball) VALUES ('$name', '$email', '$address', '$city', '$state', '$zip', '$baseball', '$basketball', '$football', '$volleyball')";
+									$sql = "INSERT INTO userData (name, email, address, city, state, zip, baseball, basketball, football, volleyball, password) VALUES ('$name', '$email', '$address', '$city', '$state', '$zip', '$baseball', '$basketball', '$football', '$volleyball','$password')";
 
 									if ($conn->query($sql) === TRUE) {
 										echo "<div style ='font:21px;font-size:200%;font-weight: 900;color:#38B400;text-align:center'> Signup successful.</div>";
@@ -277,7 +289,7 @@
 									echo "<div style ='font:21px;font-size:100%;font-weight: normal;color:#38B400;text-align:center'> You will receive a confirmation email shortly.</div>";
 								}
 
-								$name = $email = $address = $city = $state = $zip = $baseball = $basketball = $football = $volleyball = "";
+								$name = $email = $password = $address = $city = $state = $zip = $baseball = $basketball = $football = $volleyball = "";
 
 							}
 						}
@@ -311,6 +323,13 @@
 									<td>E-mail: </td>
 									<td><input type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
 										<span class = "error"><?php echo $emailErr;?></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Password: </td>
+									<td><input type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
+										<span class = "error"><?php echo $passwordErr;?></span>
 									</td>
 								</tr>
 
