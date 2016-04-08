@@ -74,10 +74,7 @@ if(!isset($_SESSION["user"])){
                     <header>
                         <h2>Princess Anne Cavaliers Boys Volleyball</h2>
                     </header>
-                    <p style="text-align:center;"><img src="images/Volleyballg1.png"></p>
-                    <br\>
-                    <p style="text-align:center;"><img src="images/Volleyballg2.png"></p>
->>>>>>> origin/master
+                    <p><img src="images/Volleyballg1.png"></p>
                 </section>
 
             </div>
