@@ -53,7 +53,7 @@ exit();
 							<!-- Sidebar -->
 								<section>
 									<header>
-										<h2>Sports</h2>
+										<h2>Your Sports</h2>
 									</header>
 									<ul class="link-list">
 										<li><a href="#">Volleyball</a></li>
@@ -72,13 +72,39 @@ exit();
 							<!-- Main Content -->
 								<section>
 									<header>
-										<h2>Two Column #2</h2>
-										<h3>Another generic two column layout</h3>
+										<h2>Welcome to the Member Homepage!</h2>
+										<h3>We are excited to have you join us! To begin please click on one of the sports tabs
+											you have selected. If you have already signed up, continue to one of your sports</h3>
+
+										<table style = "width:90%; text-align: center; margin: 0px auto; border-collapse: separate; border-spacing: 50px 30px;">
+										<tr>
+									                <td>
+														<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
+														<h2>Volleyball</h2>
+														<ul>
+															<li>&bull; Discover your statistically strong hitters</li>
+															<li>&bull; Find that better rotation</li>
+															<li>&bull; Improve your setter’s decision-making</li>
+														</ul>
+													</td>
+
+
+
+													<!-- Feature #2 -->
+													<td>
+														<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
+														<h2>Basketball</h2>
+														<ul>
+															<li>&bull; Receive lineup suggestions</li>
+															<li>&bull; Measure player efficiency</li>
+															<li>&bull; Find optimal shot locations</li>
+														</ul>
+													</td>
+										</tr>
+										</table>
 									</header>
-									<p>
-										Here is some placeholder content.
-									</p>
 								</section>
+
 
 						</div>
 					</div>
