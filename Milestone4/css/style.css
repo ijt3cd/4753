@@ -21,10 +21,10 @@
 		body, input, textarea, select
 		{
 			color: #474f51;
-			font-size: 13.5pt;
+			font-size: 14pt;
 			font-family: 'Yanone Kaffeesatz';
-			line-height: 1.85em;
-			font-weight: 300;
+			line-height: 1.8em;
+			font-weight: 320;
 		}
 
 		em
@@ -337,7 +337,8 @@
 
 					#header nav a:hover
 					{
-						color: #f6f8f8;
+						color: #FD492B;
+						font-weight: bold;
 					}
 
 		/* Banner */
