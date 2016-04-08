@@ -52,12 +52,15 @@ exit();
 							
 							<!-- Sidebar -->
 								<section>
-									<header>
-										<h2>Your Sports</h2>
-									</header>
+									<h2>Your Sports</h2><hr/>
 									<ul class="link-list">
+<<<<<<< HEAD
 										<li><a href="volleyball.php">Volleyball</a></li>
 										<li><a href="basketball.php">Basketball</a></li>
+=======
+										<li><a href="#" class="side">Volleyball</a></li>
+										<li><a href="#" class="side">Basketball</a></li>
+>>>>>>> origin/master
 									</ul>
 								</section>
 								<section>
