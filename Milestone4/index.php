@@ -72,7 +72,11 @@ exit();
 								<section>
 									<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
 									<h2>Volleyball Tracker</h2>
-								
+									<ul>
+										<li>&bull; Discover your statistically strong hitters</li>
+										<li>&bull; Find that better rotation</li>
+										<li>&bull; Improve your setter’s decision-making</li>
+									</ul>
 								</section>
 
 						</div>
@@ -82,7 +86,11 @@ exit();
 								<section>
 									<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
 									<h2>Basketball Tracker</h2>
-								
+									<ul>
+										<li>&bull; Receive lineup suggestions</li>
+										<li>&bull; Measure player efficiency</li>
+										<li>&bull; Find optimal shot locations</li>
+									</ul>
 								</section>
 
 						</div>
@@ -92,7 +100,11 @@ exit();
 								<section>
 									<a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt="" /></a>
 									<h2>Football Tracker</h2>
-									
+									<ul>
+										<li>&bull; Discover defensive schemes</li>
+										<li>&bull; Receive new plays based on on-field results</li>
+										<li>&bull; Find projected player synergies</li>
+									</ul>
 								</section>
 
 						</div>
@@ -102,7 +114,11 @@ exit();
 								<section>
 									<a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt="" /></a>
 									<h2>Baseball Tracker</h2>
-									
+									<ul>
+										<li>&bull; Play each matchup with precision</li>
+										<li>&bull; Receive recommended game by game lineups</li>
+										<li>&bull; Improve pitch selection</li>
+									</ul>
 								</section>
 
 						</div>
