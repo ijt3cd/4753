@@ -372,7 +372,7 @@ if(isset($_SESSION["user"])){
 								<br/>
 
 								<div style='text-align: center;'>
-									<button type="submit" name="btnsubmit" class="button-big">Submit</button>
+									<button type="submit" name="btnsubmit" class="button-smol">Submit</button>
 								</div>
 
 								</form>

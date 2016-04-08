@@ -53,6 +53,10 @@ exit();
 
 						<!-- Main Content -->
 						<section>
+
+						<div style="float:left; padding-right:175px;">
+							<img src="images/volley.jpg" class="bordered-feature-image"/>
+						</div>
 							<header>
 								<h2>Welcome!</h2>
 							</header>
@@ -142,14 +146,13 @@ exit();
 						}
 					?>
 
-         				
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="payment-form">
 							<p>Please enter your e-mail and password to continue.</p>
 							<table>
 								<tr>
 									<td>E-mail: </td>
 									<td><input style="width: 200px" type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
-										<span class = "error"><?php echo $emailErr;?></span> 
+										<span class = "error"><?php echo $emailErr;?></span>
 									</td>
 								</tr>
 
