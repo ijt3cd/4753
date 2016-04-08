@@ -56,8 +56,8 @@ if(!isset($_SESSION["user"])){
                         <h2>Sports</h2>
                     </header>
                     <ul class="link-list">
-                        <li><a href="#">Volleyball</a></li>
-                        <li><a href="#">Basketball</a></li>
+                        <li><a href="volleyball.php">Volleyball</a></li>
+                        <li><a href="basketball.php">Basketball</a></li>
                     </ul>
                 </section>
                 <section>
