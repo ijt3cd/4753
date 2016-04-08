@@ -317,55 +317,41 @@ if(isset($_SESSION["user"])){
 							<table>
 								<tr>
 									<td style='font-size:120%;'><u>Personal Information</u></td>
+									<td/>
+									<td style='font-size:120%; padding-left:200px;'><u>Banking Information</u></td>
 								</tr>
 
 								<tr>
-									<td><br/>Name:</td>
-									<td><br/><input type = "text" name = "name" value="<?php echo htmlspecialchars($name);?>">
-										<span class = "error"><?php echo $nameErr;?></span>
-									</td>
+									<td><br/>Name <br/><input style = "width: 200px;" type = "text" name = "name" value="<?php echo htmlspecialchars($name);?>">
+										<span class = "error"><?php echo $nameErr;?></span></td>
+									<td/>
+									<td colspan='2' style='padding-left:200px;'><br/>Currently, our service is subscription based at a rate of 
+										<strong>$10/month</strong>. <br/><span class="payment-errors"/></td>
 								</tr>
 
 								<tr>
-									<td>E-mail: </td>
-									<td><input type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
-										<span class = "error"><?php echo $emailErr;?></span>
-									</td>
+									<td>E-mail <br/><input style = "width: 200px;" type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
+										<span class = "error"><?php echo $emailErr;?></span></td>
+									<td>Password <br/><input style = "width: 200px;" type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
+										<span class = "error"><?php echo $passwordErr;?></span></td>
+									<td style='padding-left:200px;'>Credit Card Number <br/><input style = "width: 200px;" type="text" data-stripe="number"/> </td>
+									<td style='padding-right:200px;'>CVV <br/><input type="text" size="4" data-stripe="cvc" maxlength="4"/></td>
 								</tr>
 
 								<tr>
-									<td>Password: </td>
-									<td><input type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
-										<span class = "error"><?php echo $passwordErr;?></span>
-									</td>
+									<td>Street Address <br/><input style = "width: 200px;" type = "text" name = "address" value="<?php echo htmlspecialchars($address);?>">
+										<span class = "error"><?php echo $addressErr;?></span></td>
+									<td>City <br/><input style = "width: 200px;" type = "text" name = "city" value="<?php echo htmlspecialchars($city);?>">
+										<span class = "error"><?php echo $cityErr;?></span></td>
+									<td style='padding-left:200px;'>Expiration Date (MM/YYYY) <br/><input type="text" size="2" data-stripe="exp-month" maxlength="2"/> / 
+											<input type="text" size="4" data-stripe="exp-year" maxlength="4"/></td>
 								</tr>
 
 								<tr>
-									<td>Street Address: </td>
-									<td><input type = "text" name = "address" value="<?php echo htmlspecialchars($address);?>">
-										<span class = "error"><?php echo $addressErr;?></span>
-									</td>
-								</tr>
-
-								<tr>
-									<td>City:</td>
-									<td><input type = "text" name = "city" value="<?php echo htmlspecialchars($city);?>">
-										<span class = "error"><?php echo $cityErr;?></span>
-									</td>
-								</tr>
-
-								<tr>
-									<td>State:</td>
-									<td><input type = "text" name = "state" value="<?php echo htmlspecialchars($state);?>">
-										<span class = "error"><?php echo $stateErr;?></span>
-									</td>
-								</tr>
-
-								<tr>
-									<td>Zipcode:</td>
-									<td><input type = "text" name = "zip" value="<?php echo htmlspecialchars($zip);?>">
-										<span class = "error"><?php echo $zipErr;?></span>
-									</td>
+									<td>State <br/><input style = "width: 200px;" type = "text" name = "state" value="<?php echo htmlspecialchars($state);?>">
+										<span class = "error"><?php echo $stateErr;?></span></td>
+									<td>Zipcode <br/><input style = "width: 200px;" type = "text" name = "zip" value="<?php echo htmlspecialchars($zip);?>">
+										<span class = "error"><?php echo $zipErr;?></span></td>
 								</tr>
 
 								<tr>
@@ -381,40 +367,13 @@ if(isset($_SESSION["user"])){
 									</td>
 								</tr>
 
-								<!--Credit card info-->
-								<tr>
-									<td style='font-size:120%;'><u><br/>Banking Information</u></td>
-								</tr>
+								</table>
 
-								<tr>
-									<td colspan='2'><br/>Currently, our service is subscription based at a rate of 
-										<strong>$10/month</strong>.</td>
-									</tr>
+								<br/>
 
-									<tr><td colspan='2'><span class="payment-errors"/></td></tr>
-
-									<!--?INPUT VALIDATION?-->
-									<tr>
-										<td><br/>Credit Card Number:</td>
-										<td><br/><input type="text" size="20" data-stripe="number"/></td>
-									</tr>
-
-									<tr>
-										<td>CVV:</td>
-										<td><input type="text" size="4" data-stripe="cvc" maxlength="4"/></td>
-									</tr>
-
-									<tr>
-										<td>Expiration Date (MM/YYYY):</td>
-										<td><input type="text" size="2" data-stripe="exp-month" maxlength="2"/> / 
-											<input type="text" size="4" data-stripe="exp-year" maxlength="4"/></td>
-										</tr>
-
-									</table>
-
-									<br/>
-									<button type="submit" name="btnsubmit" style="color:#474f51;font-size:13.5pt;
-									font-family:'Yanone Kaffeesatz';line-height:1.85em;font-weight:300;">Submit</button>
+								<div style='text-align: center;'>
+									<button type="submit" name="btnsubmit" class="button-big">Submit</button>
+								</div>
 
 								</form>
 

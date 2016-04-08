@@ -48,7 +48,7 @@ session_start();
 							<!-- Banner Copy -->
 								<p>Seeking that State Championship? Going for a winning season? We offer easy, affordable
 									statistical analysis for taking your team's game to the next level.</p>
-								<a href="signup.php" class="button-big" >Sign Up</a>
+								<a href="signup.php" class="button-big">Sign Up</a>
 
 						</div>
 						<div class="6u">
