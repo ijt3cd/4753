@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <!--
 	Halcyonic 1.0 by nodethirtythree + FCT
@@ -22,17 +25,17 @@
 					<div class="12u-first">
 					
 						<!-- Logo -->
-							<h1><a href="index.html" class ="logo-image"><img src="images/logo.png" alt="" /></a></h1>
+							<h1><a href="index.php" class ="logo-image"><img src="images/logo.png" alt="" /></a></h1>
 						
 						<!-- Nav -->
 							<nav>
-								<a href="index.html">Homepage</a>
+								<a href="index.php">Homepage</a>
 								<!--<a href="threecolumn.html">Three Column</a>
 								<a href="twocolumn1.html">Two Column #1</a>
 								<a href="twocolumn2.html">Two Column #2</a>
 								<a href="onecolumn.html">One Column</a>-->
 								<a href="signup.php">Sign Up/Login</a>
-								<a href="about.html">About Us</a>
+								<a href="about.php">About Us</a>
 							</nav>
 
 					</div>
