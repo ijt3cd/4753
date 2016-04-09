@@ -183,7 +183,7 @@ if(isset($_SESSION["user"])){
 									}
 								}
 
-								if(($nameErr == "") && ($emailErr == "") && ($passwordErr == "") && ($addressErr == "") && ($cityErr == "") && ($stateErr == "") && ($zipErr == "")){
+								
 									$servername = "localhost";
 									$username = "root";
 									$dbpassword = "";
@@ -207,6 +207,24 @@ if(isset($_SESSION["user"])){
 									$basketball = $_POST['basketball'];
 									$football = $_POST['football'];
 									$volleyball = $_POST['volleyball'];
+
+									$sql =  " SELECT email FROM userData Where email = '$email' ";
+									$result = $conn->query($sql);
+
+									
+
+									foreach ($result as $value) {
+										foreach ($value as $value2) {
+											
+											$emailErr = "Email already in use";
+
+											
+
+											
+										}
+									}
+
+									if(($nameErr == "") && ($emailErr == "") && ($passwordErr == "") && ($addressErr == "") && ($cityErr == "") && ($stateErr == "") && ($zipErr == "")){
 
 									$sql = "INSERT INTO userData (name, email, address, city, state, zip, baseball, basketball, football, volleyball, password) VALUES ('$name', '$email', '$address', '$city', '$state', '$zip', '$baseball', '$basketball', '$football', '$volleyball','$password')";
 
@@ -297,8 +315,8 @@ if(isset($_SESSION["user"])){
 								}
 
 								$name = $email = $password = $address = $city = $state = $zip = $baseball = $basketball = $football = $volleyball = "";
-
 							}
+							
 						}
 
 						function test_input($data) {
