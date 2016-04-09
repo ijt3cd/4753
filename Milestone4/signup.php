@@ -314,9 +314,16 @@ if(isset($_SESSION["user"])){
 									echo "<div style ='font:21px;font-size:100%;font-weight: normal;color:#38B400;text-align:center'> You will receive a confirmation email shortly.</div>";
 								}
 
+								
+								$_SESSION["user"] = $email;
+								header("Location: index.php"); /* Redirect browser */
+								exit();
+								
+								
+
 								$name = $email = $password = $address = $city = $state = $zip = $baseball = $basketball = $football = $volleyball = "";
 							}
-							
+								
 						}
 
 						function test_input($data) {
