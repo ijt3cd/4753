@@ -62,7 +62,7 @@ exit();
 							</header>
 
 							<?php
-							$emailErr = $passwordErr = "";
+							$emailErr = $passwordErr = $loginErr = "";
 							$email = $password = "";
 
 							function test_input($data) {
@@ -93,9 +93,7 @@ exit();
 								else {
 									$password = test_input($_POST["password"]);
 								}
-								if (strlen($password)<4){
-									$passwordErr = "Password must be at least 4 characters";
-								}
+								
 								
 
 
@@ -123,21 +121,24 @@ exit();
 									$sql =  " SELECT email FROM userData Where password = '$password' ";
 									$result = $conn->query($sql);
 
-						
+									
 
 									foreach ($result as $value) {
 										foreach ($value as $value2) {
 											$_SESSION["user"] = $value2;
+											$conn->close();
+
 											header("Location: home.php"); /* Redirect browser */
+
 											exit();
 										}
 									}
 
-									
+									$loginErr = "Invalid login.";
 
 									$conn->close();
 
-
+									
 
 								$email = $password = "";
 							}
@@ -148,6 +149,10 @@ exit();
 
 						<form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="payment-form">
 							<p>Please enter your e-mail and password to continue.</p>
+
+							<span class = "error"><?php echo $loginErr;?></span>
+
+
 							<table>
 								<tr>
 									<td>E-mail: </td>
@@ -158,7 +163,7 @@ exit();
 
 								<tr>
 									<td>Password: </td>
-									<td><input style="width: 200px" type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
+									<td><input style="width: 200px" type = "password" name = "password" 
 										<span class = "error"><?php echo $passwordErr;?></span> 
 									</td>
 								</tr>
