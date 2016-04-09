@@ -54,8 +54,8 @@ exit();
 								<section>
 									<h2>Your Sports</h2><hr/>
 									<ul class="link-list">
-										<li><a href="#" class="side">Volleyball</a></li>
-										<li><a href="#" class="side">Basketball</a></li>
+										<li><a href="volleyball.php" class="side">Volleyball</a></li>
+										<li><a href="basketball.php" class="side">Basketball</a></li>
 									</ul>
 								</section>
 								<section>
@@ -71,13 +71,14 @@ exit();
 								<section>
 									<header>
 										<h2>Welcome to the Member Homepage!</h2>
-										<h3>We are excited to have you join us! To begin please click on one of the sports tabs
-											you have selected. If you have already signed up, continue to one of your sports</h3>
+										<br/>
+										<p>We are excited to have you join us! To get started, or to review stats and feedback, 
+										please click on one of the sports you have selected below.</p>
 
 										<table style = "width:90%; text-align: center; margin: 0px auto; border-collapse: separate; border-spacing: 50px 30px;">
 										<tr>
 									                <td>
-														<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
+														<a href="volleyball.php" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
 														<h2>Volleyball</h2>
 														<ul>
 															<li>&bull; Discover your statistically strong hitters</li>
@@ -90,7 +91,7 @@ exit();
 
 													<!-- Feature #2 -->
 													<td>
-														<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
+														<a href="basketball.php" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
 														<h2>Basketball</h2>
 														<ul>
 															<li>&bull; Receive lineup suggestions</li>

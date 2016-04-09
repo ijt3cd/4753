@@ -163,7 +163,7 @@ exit();
 
 								<tr>
 									<td>Password: </td>
-									<td><input style="width: 200px" type = "password" name = "password" 
+									<td><input style="width: 200px" type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
 										<span class = "error"><?php echo $passwordErr;?></span> 
 									</td>
 								</tr>

@@ -164,7 +164,7 @@ if(isset($_SESSION["user"])){
 									$state = test_input($_POST["state"]);
 								}
 								if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
-									$stateErr = "Enter Valid State";
+									$stateErr = "Enter Valid State.";
 								}
 								if (trim($state) == '') {
 									$stateErr = "Missing.";
@@ -179,7 +179,7 @@ if(isset($_SESSION["user"])){
 								}
 								if (!preg_match ('/^[0-9]{5}$/', $zip)){
 									if (!preg_match ( '/^([0-9]{5})-([0-9]{4})$/', $zip) ) {
-										$zipErr = "Enter Valid Zip";
+										$zipErr = "Enter Valid Zip.";
 									}
 								}
 
@@ -216,7 +216,7 @@ if(isset($_SESSION["user"])){
 									foreach ($result as $value) {
 										foreach ($value as $value2) {
 											
-											$emailErr = "Email already in use";
+											$emailErr = "Email already in use.";
 
 											
 
@@ -356,7 +356,7 @@ if(isset($_SESSION["user"])){
 
 								<tr>
 									<td>E-mail <br/><input style = "width: 200px;" type = "text" name = "email" value="<?php echo htmlspecialchars($email);?>">
-										<span class = "error"><?php echo $emailErr;?></span></td>
+										<br/><span class = "error"><?php echo $emailErr;?></span></td>
 									<td>Password <br/><input style = "width: 200px;" type = "password" name = "password" value="<?php echo htmlspecialchars($password);?>">
 										<span class = "error"><?php echo $passwordErr;?></span></td>
 									<td style='padding-left:200px;'>Credit Card Number <br/><input style = "width: 200px;" type="text" data-stripe="number"/> </td>
@@ -376,7 +376,7 @@ if(isset($_SESSION["user"])){
 									<td>State <br/><input style = "width: 200px;" type = "text" name = "state" value="<?php echo htmlspecialchars($state);?>">
 										<span class = "error"><?php echo $stateErr;?></span></td>
 									<td>Zipcode <br/><input style = "width: 200px;" type = "text" name = "zip" value="<?php echo htmlspecialchars($zip);?>">
-										<span class = "error"><?php echo $zipErr;?></span></td>
+										<br/><span class = "error"><?php echo $zipErr;?></span></td>
 								</tr>
 
 								<tr>

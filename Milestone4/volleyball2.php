@@ -52,18 +52,17 @@ if(!isset($_SESSION["user"])){
 
                 <!-- Sidebar -->
                 <section>
-                    <header>
-                        <h2>Sports</h2>
-                    </header>
-                    <ul class="link-list">
-                        <li><a href="volleyball2.php">Volleyball</a></li>
-                        <li><a href="basketball.php">Basketball</a></li>
-                    </ul>
-                </section>
-                <section>
-                    <div style='text-align: center;'>
-                        <a href="logout.php" class="button-big">Log Out</a>
-                    </div>
+                    <h2>Your Sports</h2><hr/>
+                                    <ul class="link-list">
+                                        <li><a href="volleyball.php" class="side">Volleyball</a></li>
+                                        <li><a href="basketball.php" class="side">Basketball</a></li>
+                                    </ul>
+                                </section>
+                                <section>
+                                    <div style='text-align: center;'>
+                                        <a href="logout.php" class="button-big">Log Out</a>
+                                    </div>
+                                </section>
                 </section>
 
             </div>
@@ -74,9 +73,10 @@ if(!isset($_SESSION["user"])){
                     <header>
                         <h2>Princess Anne Cavaliers Boys Volleyball</h2>
                     </header>
-                    <p><img src="images\Volleyballg1.png"></p>
+                    <p><img src="images/Volleyballg1.png"></p>
                     <br\>
-                    <p><img src="images\Volleyballg2.png"></p>
+                    <p><img src="images/Volleyballg2.png"></p>
+                    <a href="vballinput.php" class="button-big">Input more data</a>
                 </section>
 
             </div>
